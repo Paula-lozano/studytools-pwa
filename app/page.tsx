@@ -3,37 +3,57 @@
 import { useState } from "react";
 
 export default function Home() {
-  const [nota1, setNota1] = useState("");
-  const [nota2, setNota2] = useState("");
+  const [materia, setMateria] = useState("");
+  const [materias, setMaterias] = useState<string[]>([]);
 
-  const promedio =
-    (Number(nota1) + Number(nota2)) / 2;
+  const agregarMateria = () => {
+    if (materia.trim() !== "") {
+      setMaterias([...materias, materia]);
+      setMateria("");
+    }
+  };
 
   return (
-    <main className="p-10">
-      <h1 className="text-3xl font-bold mb-5">
-        Calculadora de Promedio
+    <main className="min-h-screen bg-gradient-to-br from-purple-600 to-blue-500 p-8 text-white">
+      <h1 className="text-4xl font-bold mb-2">
+        📚 StudyFlow
       </h1>
 
-      <input
-        type="number"
-        placeholder="Nota 1"
-        value={nota1}
-        onChange={(e) => setNota1(e.target.value)}
-        className="border p-2 mr-2"
-      />
+      <p className="mb-8 text-lg">
+        Organiza tus materias y mejora tu productividad.
+      </p>
 
-      <input
-        type="number"
-        placeholder="Nota 2"
-        value={nota2}
-        onChange={(e) => setNota2(e.target.value)}
-        className="border p-2"
-      />
+      <div className="bg-white p-6 rounded-2xl shadow-xl text-black max-w-md">
+        <h2 className="text-2xl font-bold mb-4">
+          Mis Materias
+        </h2>
 
-      <h2 className="mt-5 text-xl">
-        Promedio: {isNaN(promedio) ? 0 : promedio}
-      </h2>
+        <input
+          type="text"
+          placeholder="Ej: Matemáticas"
+          value={materia}
+          onChange={(e) => setMateria(e.target.value)}
+          className="w-full border p-3 rounded-xl mb-4"
+        />
+
+        <button
+          onClick={agregarMateria}
+          className="bg-purple-600 hover:bg-purple-700 text-white px-5 py-3 rounded-xl w-full transition"
+        >
+          Agregar Materia
+        </button>
+
+        <div className="mt-6 space-y-3">
+          {materias.map((item, index) => (
+            <div
+              key={index}
+              className="bg-purple-100 p-3 rounded-xl font-semibold"
+            >
+              📖 {item}
+            </div>
+          ))}
+        </div>
+      </div>
     </main>
   );
 }

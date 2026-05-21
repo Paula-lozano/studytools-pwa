@@ -4,8 +4,8 @@ import Link from "next/link";
 import SWRegistration from "./SWRegistration";
 
 export const metadata: Metadata = {
-  title: "StudyTools",
-  description: "Herramientas para estudiantes",
+  title: "StudyFlow",
+  description: "App de productividad estudiantil",
   manifest: "/manifest.json",
 };
 
@@ -17,9 +17,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        <nav className="p-5 bg-black text-white flex gap-5">
-          <Link href="/">Promedios</Link>
-          <Link href="/tareas">Tareas</Link>
+        <nav className="bg-black text-white p-5 flex gap-6 text-lg font-semibold shadow-lg">
+          <Link href="/">📚 Materias</Link>
+          <Link href="/tareas">✅ Tareas</Link>
         </nav>
 
         {children}

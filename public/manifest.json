@@ -1,19 +1,19 @@
 {
-  "name": "StudyTools",
-  "short_name": "StudyTools",
-  "description": "Herramientas para estudiantes",
+  "name": "StudyFlow",
+  "short_name": "StudyFlow",
+  "description": "App de productividad estudiantil",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#4f46e5",
+  "theme_color": "#4f46e5",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/3135/3135755.png",
+      "src": "https://cdn-icons-png.flaticon.com/512/3976/3976626.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/3135/3135755.png",
+      "src": "https://cdn-icons-png.flaticon.com/512/3976/3976626.png",
       "sizes": "512x512",
       "type": "image/png"
     }
